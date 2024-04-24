@@ -1,4 +1,4 @@
-# Simple User Management
+# Sample CRUD App
 
 Sample application using PHP and MySQL.
 
