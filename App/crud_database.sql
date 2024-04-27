@@ -1,3 +1,4 @@
+drop database if exists crud_database;
 create database crud_database;
 use crud_database;
 

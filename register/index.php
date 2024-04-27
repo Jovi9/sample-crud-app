@@ -14,34 +14,35 @@ $pageTitle = 'Register';
 <?php include App::getBaseDir() . 'App/includes/head.php'; ?>
 
 <body>
-    <?php
-    if (isset($_SESSION['request-failed'])) {
-    ?>
-        <p style="color: red;"><?php echo $_SESSION['request-failed'] ?></p>
-    <?php
-        unset($_SESSION['request-failed']);
-    }
-    ?>
+     <a href="<?php echo App::routes()['login'] ?>">Login</a>
+     <hr>
 
-    <?php
-    if (isset($_SESSION['register-failed'])) {
-    ?>
-        <p style="color: red;"><?php echo $_SESSION['register-failed'] ?></p>
-    <?php
-        unset($_SESSION['register-failed']);
-    }
-    ?>
+     <?php
+     if (isset($_SESSION['request-failed'])) {
+     ?>
+          <p style="color: red;"><?php echo $_SESSION['request-failed'] ?></p>
+     <?php
+          unset($_SESSION['request-failed']);
+     }
+     ?>
 
-    <h1>Register Page</h1>
-    <a href="<?php echo App::routes()['login'] ?>">Login</a>
-    <hr>
+     <?php
+     if (isset($_SESSION['register-failed'])) {
+     ?>
+          <p style="color: red;"><?php echo $_SESSION['register-failed'] ?></p>
+     <?php
+          unset($_SESSION['register-failed']);
+     }
+     ?>
 
-    <form action="" method="post">
-        <input type="text" name="name" id="" required placeholder="Name:...">
-        <input type="text" name="username" required placeholder="Username:...">
-        <input type="password" name="password" id="" required placeholder="Password:...">
-        <button type="submit" name="register">Register</button>
-    </form>
+     <h1>Register Page</h1>
+
+     <form action="" method="post">
+          <input type="text" name="name" id="" required placeholder="Name:...">
+          <input type="text" name="username" required placeholder="Username:...">
+          <input type="password" name="password" id="" required placeholder="Password:...">
+          <button type="submit" name="register">Register</button>
+     </form>
 
 </body>
 

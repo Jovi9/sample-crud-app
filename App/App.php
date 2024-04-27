@@ -55,6 +55,11 @@ class App
                'login' => BASE_URI . 'login/',
                'register' => BASE_URI . 'register/',
                'dashboard' => BASE_URI . 'dashboard/',
+               'logout' => BASE_URI . 'logout/',
+               'profile' => BASE_URI . 'profile/',
+               'edit-profile' => BASE_URI . 'profile/edit/',
+
+               'edit-user' => BASE_URI . 'edit_user/',
           );
      }
 }
