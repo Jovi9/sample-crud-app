@@ -1,17 +1,21 @@
 {
-    "name": "juswa/crud-app",
-    "type": "project",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "App\\": "App/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Joshua R. Villafuerte",
-            "email": "joshuar.villafuerte9@gmail.com"
-        }
-    ],
-    "require": {}
+     "name": "juswa/crud-app",
+     "type": "project",
+     "license": "MIT",
+     "autoload": {
+          "psr-4": {
+               "App\\": "app/",
+               "Routing\\": "src/routing/"
+          },
+          "files": [
+               "src/helpers.php"
+          ]
+     },
+     "authors": [
+          {
+               "name": "Joshua R. Villafuerte",
+               "email": "joshuar.villafuerte9@gmail.com"
+          }
+     ],
+     "require": {}
 }
