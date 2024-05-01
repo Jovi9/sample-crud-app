@@ -16,14 +16,14 @@ class UserController
      }
      public function index($request)
      {
-          requestChecker($request);
+          requestChecker($request, route('users'));
           $users = (new User())->loadUsers();
           $userCount = (new User())->GetNumberOfUsers();
           require view('users/users');
      }
      public function edit($request)
      {
-          getMethodChecker($request, 'user', 'users-edit');
+          // getMethodChecker($request, 'user', 'users-edit');
           $user = new User;
           $id = mysqli_real_escape_string($user->connection, $request['user']);
           $result = $user->getUser($id);

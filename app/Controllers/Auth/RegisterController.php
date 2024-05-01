@@ -15,7 +15,7 @@ class RegisterController
 
      public function index($request): void
      {
-          requestChecker($request);
+          requestChecker($request, route('register'));
           require view('auth/register');
      }
      public function register($request)

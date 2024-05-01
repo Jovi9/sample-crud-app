@@ -10,7 +10,7 @@ class DashboardController
      }
      public function index($request)
      {
-          requestChecker($request);
+          requestChecker($request, route('dashboard'));
           require view('dashboard');
      }
 }

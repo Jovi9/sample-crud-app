@@ -13,7 +13,7 @@ class LoginController
      }
      public function index($request): void
      {
-          requestChecker($request);
+          requestChecker($request, route('login'));
           require view('auth/login');
      }
 
