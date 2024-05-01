@@ -11,9 +11,8 @@ class LoginController
      {
           guest();
      }
-     public function index($request): void
+     public function index(): void
      {
-          requestChecker($request, route('login'));
           require view('auth/login');
      }
 

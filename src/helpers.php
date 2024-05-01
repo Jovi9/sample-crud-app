@@ -54,29 +54,6 @@ function routeSet(string $name, string $path): string
      return $path;
 }
 
-function requestChecker($request, $uri, $count = 1)
-{
-     $uri = str_replace(baseUrl(), '', $uri);
-     $requestURI = ltrim($uri, '/');
-     $valid = false;
-     if ($request != null) {
-          if ((array_key_exists($requestURI, $request)) && count($request) === $count) {
-               $valid = true;
-          } else {
-               $valid = false;
-          }
-     } else {
-          $valid = true;
-     }
-     if ($valid === false) {
-          foreach ($request as $key => $value) {
-               unset($request[$key]);
-          }
-          header("location:" . route($uri));
-          exit();
-     }
-}
-
 const SUBMISSION_ERROR = 'submission-error';
 function postMethodChecker($request, $key, $url)
 {
@@ -89,43 +66,17 @@ function postMethodChecker($request, $key, $url)
           exit();
      }
 }
-// function getMethodChecker($request, $key, $url, $count = 1)
-// {
-//      $uri = str_replace(baseUrl(), '', $url);
-//      $requestURI = ltrim($uri, '/');
-//      $valid = false;
-//      if ($request != null) {
-//           if ((array_key_exists($requestURI, $request))) {
-//                $valid = true;
-//           } else {
-//                $valid = false;
-//           }
-//      } else {
-//           $valid = true;
-//      }
-//      if (is_array($key)) {
-//           foreach ($key as $ky) {
-//                if (array_key_exists($ky, $request)) {
-//                     $valid = true;
-//                } else {
-//                     $valid = false;
-//                     break;
-//                }
-//           }
-//      } else {
-//           if (array_key_exists($key, $request)) {
-//                $valid = true;
-//           }
-//      }
-//      if ($valid === false) {
-//           foreach ($request as $key => $value) {
-//                unset($request[$key]);
-//           }
-//           header('HTTP/1.0 404 Not Found');
-//           require view('errors/error');
-//           die();
-//      }
-// }
+
+function getMethodChecker($request, $key, $url)
+{
+     if (!isset($request[$key])) {
+          foreach ($request as $key => $value) {
+               unset($request[$key]);
+          }
+          header("location:" . route($url));
+          exit();
+     }
+}
 
 const BASE_DIRECTORY = __DIR__ . '/../';
 // get directory
