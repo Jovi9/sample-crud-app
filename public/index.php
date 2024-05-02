@@ -1,7 +1,11 @@
 <?php
 session_start();
-// class autoloader
+/**
+ * Load the composer class autoloader
+ */
 require __DIR__ . '/../vendor/autoload.php';
 
-// load routes
+/**
+ * Load the application routes
+ */
 require getDirectory()['src'] . 'routes.php';

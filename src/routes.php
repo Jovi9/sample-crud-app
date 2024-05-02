@@ -1,6 +1,8 @@
 <?php
 
-// Define routing pages for application
+/**
+ * Define routing of the application
+ */
 
 use Routing\Route;
 use App\Controllers\DashboardController;
