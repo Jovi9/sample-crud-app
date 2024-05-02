@@ -8,9 +8,8 @@ class DashboardController
      {
           auth();
      }
-     public function index($request)
+     public function index()
      {
-          requestChecker($request, route('dashboard'));
           require view('dashboard');
      }
 }

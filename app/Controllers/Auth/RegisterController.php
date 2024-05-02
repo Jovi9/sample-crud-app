@@ -13,9 +13,8 @@ class RegisterController
           guest();
      }
 
-     public function index($request): void
+     public function index(): void
      {
-          requestChecker($request, route('register'));
           require view('auth/register');
      }
      public function register($request)

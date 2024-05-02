@@ -11,14 +11,12 @@ class ProfileController
      {
           auth();
      }
-     public function index($request)
+     public function index()
      {
-          requestChecker($request, route('profile'));
           require view('profile/profile');
      }
-     public function edit($request)
+     public function edit()
      {
-          requestChecker($request, route('profile-edit'));
           require view('profile/edit');
      }
      public function update($request)
